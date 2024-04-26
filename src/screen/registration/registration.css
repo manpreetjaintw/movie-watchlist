@@ -1,0 +1,29 @@
+.mainDiv {
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f3f1fd;
+  align-items: center;
+}
+
+.formDiv {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px #eee;
+  padding: 30px;
+}
+.formDiv h1 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0px 0px 20px;
+}
+.formDiv .alreadyLoginbtn {
+  margin: 20px 0px 10px;
+  font-size: 14px;
+}
+.formDiv .alreadyLoginbtn span {
+  color: #e31d1d;
+  cursor: pointer;
+}

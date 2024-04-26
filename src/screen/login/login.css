@@ -1,0 +1,21 @@
+.LoginmainDiv {
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f3f1fd;
+  align-items: center;
+}
+
+.LoginformDiv {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px #eee;
+  padding: 30px;
+}
+.LoginmainDiv h1 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0px 0px 20px;
+}

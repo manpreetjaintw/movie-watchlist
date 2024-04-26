@@ -1,0 +1,8 @@
+.movieBox h2 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.movieBox .aboutPara {
+  font-weight: 600;
+}
