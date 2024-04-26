@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Cards from "../../component/card/Cards";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { BasicButton } from "../../component/button";
-import { searchFilter, watchListRemove } from "../../redux/action/index";
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+import { watchListRemove } from "../../redux/action/index";
 import "./watchlistscreen.css";
 
 function WatchListScreen() {
@@ -13,8 +12,6 @@ function WatchListScreen() {
   const [search, setSearch] = useState("");
   const watchListData = useSelector((state) => state.UserReducer.watchData);
   const user = JSON.parse(localStorage.getItem("token"))
-  const keys = Object.keys(watchListData);
-  let key = keys.filter(item => item === user)
   const data = user && (watchListData[user] || []);
 
   const [filterData, setFilterData] = useState(data);
@@ -43,11 +40,11 @@ function WatchListScreen() {
     }
   }, [search, data]);
 
-  
+
 
   return (
     <>
-    
+
       <Container maxWidth="xxl">
         <Grid container spacing={2}>
           <WatchList setSearch={setSearch} />
@@ -55,16 +52,7 @@ function WatchListScreen() {
             <Box className="movieBox" sx={{ py: 2 }}>
               <Typography variant="h2">
                 {" "}
-                Movies by Tom Cruise{" "}
-                <EditOutlinedIcon
-                  style={{ marginLeft: "10px", fontSize: "18px" }}
-                />{" "}
-              </Typography>
-              <Typography className="aboutPara">
-                About this watchlist
-              </Typography>
-              <Typography>
-                This list lorem ipsum dolor et blah blah blah
+                My Watch List{" "}
               </Typography>
             </Box>
             <Grid container gap={4.5}>

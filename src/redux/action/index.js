@@ -14,6 +14,13 @@ export const apiDataSuccess = (data) => {
   };
 };
 
+export const apiDataNotFound = (data) => {
+  return {
+    type: 'REMOVE_DATA',
+    payload: data
+  }
+}
+
 export const apiDataFailure = (error) => {
   return {
     type: "ERROR",
@@ -45,6 +52,7 @@ export const fetchData = (search) => async (dispatch) => {
     const data = await fetchDataFromApi(search);
     if (data?.Response === 'False') {
       dispatch(apiDataFailure(data?.Error))
+      dispatch(apiDataNotFound([]))
     } else {
       dispatch(apiDataSuccess(data.Search));
     }

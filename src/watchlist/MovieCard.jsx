@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Box, Grid, Typography } from "@mui/material";
 import BasicInput from "../component/input/BasicInput";
@@ -19,6 +19,12 @@ export default function MovieCard() {
 
   const user = JSON.parse(localStorage.getItem("token"))
   const data = user && (isList[user] || []);
+
+  useEffect(() => {
+    if (dataShow.length < 1 && search.length > 0) {
+      setError("Movie not Found");
+    }
+  }, [dataShow]);
 
   const SearchInputStyle = {
     width: "97%",

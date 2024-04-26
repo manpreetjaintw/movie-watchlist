@@ -14,8 +14,11 @@ export const UserReducer = (state = intialState, action) => {
     case "ADD_DATA": {
       return { ...state, loading: false, data: action.payload };
     }
+    case "REMOVE_DATA": {
+      return { ...state, data: [] }
+    }
     case "ERROR": {
-      
+
       return { ...state, loading: false, error: action.payload };
     }
     case "WATCH_DATA": {
@@ -31,10 +34,10 @@ export const UserReducer = (state = intialState, action) => {
       return { ...state, watchData: updatedWatchData }
     }
     case "watch_Logout": {
-      return { ...state,  data:action.payload };
+      return { ...state, data: action.payload };
     }
     case "watch_List_Remove": {
-      
+
       const updatedWatchData = { ...state.watchData };
       const tokenKeys = Object.keys(updatedWatchData);
       for (let key of tokenKeys) {
@@ -44,7 +47,7 @@ export const UserReducer = (state = intialState, action) => {
       }
       return { ...state, watchData: updatedWatchData };
     }
-    
+
 
     default:
       return state;
