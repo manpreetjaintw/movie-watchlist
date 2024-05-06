@@ -22,7 +22,7 @@
             ]
         },
         {
-            "source": "http://www.omdbapi.com/(.*)",
+            "source": "http://www.omdbapi.com/.*",
             "headers": [
                 {
                     "key": "Access-Control-Allow-Origin",
